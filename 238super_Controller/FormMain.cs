@@ -48,7 +48,13 @@ namespace _238super_Controller
         {
             tabPage1.Parent = this.tabControl1;
             tabPage2.Parent = null;
-            //tabPage3.Parent = null;
+            tabPage3.Parent = null;
+            BT_ArmMayday.Enabled = false;
+            
+            TB_ProGAddr.Enabled = false;
+            TB_ProGData.Enabled = false;
+            BT_ExitProG.Enabled = false;
+            button3.Enabled = false;
         }
 
         private void WorkStaus()
@@ -181,7 +187,11 @@ namespace _238super_Controller
                 listViewMain.Items[i].SubItems[2].Text = nRelult == 1 ? "成功(1)" : "失败(0)";
                 listViewMain.Items[i].SubItems[5].Text = "普通布防";
                 if (nRelult == 1)
+                {
                     listViewMain.Items[i].SubItems[1].Text = "布防";
+                    BT_ArmMayday.Enabled = true;
+                }
+                    
                 String sText = "主机" + listViewMain.Items[i].Name + "布防" + listViewMain.Items[i].SubItems[5].Text + "\r\n";
                 TB_Staus.AppendText(sText);
                 //enableArmBtn(false);
@@ -205,7 +215,11 @@ namespace _238super_Controller
                 listViewMain.Items[i].SubItems[2].Text = nRelult == 1 ? "成功(1)" : "失败(0)";
                 listViewMain.Items[i].SubItems[5].Text = "普通撤防";
                 if (nRelult == 1)
+                {
                     listViewMain.Items[i].SubItems[1].Text = "撤防";
+                    BT_ArmMayday.Enabled = false;
+                }
+                    
                 String sText = "主机" + listViewMain.Items[i].Name + "撤防" + listViewMain.Items[i].SubItems[5].Text + "\r\n";
                 TB_Staus.AppendText(sText);
                 //enableArmBtn(true);
@@ -318,6 +332,34 @@ namespace _238super_Controller
         }
 
         #endregion
+
+        private void BT_EnterDeviceProG_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(TB_SetupPassWord.Text) == 012345)
+            {
+                this.EnergencyToolStripMenuItem.Enabled = true;
+                MessageBox.Show("密码正确", "提示");
+                tabPage1.Parent = null;
+                tabPage2.Parent = null;
+                tabPage3.Parent = this.tabControl1;         
+            }
+            else
+            {
+                MessageBox.Show("密码错误，请检查密码是否已经被修改", "提示");
+            }
+        }
+
+        private void BT_ExitDeviceProG_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("是否要退出设备编程？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                tabPage1.Parent = null;
+                tabPage2.Parent = this.tabControl1;
+                tabPage3.Parent = null;
+                this.EnergencyToolStripMenuItem.Enabled = false;
+            }
+            
+        }
 
         private void BT_GetAppVer_Click(object sender, EventArgs e)  //获取版本按钮
         {
@@ -532,7 +574,30 @@ namespace _238super_Controller
             sText += "TroubleBit：" + e.troubleBit.ToString() + "\r\n";
             sText += "BypassBit:" + e.byPassedBit.ToString() + "\r\n";
             TB_Staus.AppendText(sText);
-
+            switch (e.alarmBit)
+            {
+                case 2: 
+                    label17.Text = "防区2：异常";
+                    this.label17.ForeColor = Color.Red;
+                    break;
+                case 4: 
+                    label18.Text = "防区3：异常";
+                    this.label18.ForeColor = Color.Red;
+                    break;
+                case 6:  
+                    label17.Text = "防区2：异常";
+                    label18.Text = "防区3：异常";
+                    this.label17.ForeColor = Color.Red;
+                    this.label18.ForeColor = Color.Red;
+                    break;
+                default:
+                    label17.Text = "防区2：正常";
+                    label18.Text = "防区3：正常";
+                    this.label17.ForeColor = Color.Black;
+                    this.label18.ForeColor = Color.Black;
+                    break;
+            }
+            
         }
 
         private void listViewMain_SelectedIndexChanged(object sender, EventArgs e)  //点击框图选择报警器
@@ -588,7 +653,10 @@ namespace _238super_Controller
                 String strc = TB_SetupPassWord.Text;
                 axCooMonitorMain.FCSendCtrlCmd(listViewMain.Items[0].Name, FC_Ctrl_Type.FC_CTRL_PROGRAM, strc);
                 TB_ProGAddr.Enabled = true;
-                TB_ProGData.Enabled = true;
+                TB_ProGData.Enabled = true;                
+                BT_ExitProG.Enabled = true;
+                button3.Enabled = true;
+                BT_StartProG.Enabled = false;
                 listViewMain.Items[i].SubItems[5].Text = "进入编程";
                 String sText = "主机" + listViewMain.Items[i].Name + "进入编程：" + strc + "\r\n";
                 TB_Staus.AppendText(sText);
@@ -611,6 +679,9 @@ namespace _238super_Controller
                 axCooMonitorMain.FCSendCtrlCmd(listViewMain.Items[0].Name, FC_Ctrl_Type.FC_CTRL_UNPROGRAM, strc);
                 TB_ProGAddr.Enabled = false;
                 TB_ProGData.Enabled = false;
+                BT_ExitProG.Enabled = false;
+                button3.Enabled = false;
+                BT_StartProG.Enabled = true;
                 listViewMain.Items[i].SubItems[5].Text = "退出编程";
                 String sText = "主机" + listViewMain.Items[i].Name + "退出编程：" + strc + "\r\n";
                 TB_Staus.AppendText(sText);
@@ -634,6 +705,8 @@ namespace _238super_Controller
                 listViewMain.Items[i].SubItems[5].Text = "清除警报记忆";
                 String sText = "主机" + listViewMain.Items[i].Name + "清除警报记忆" + "\r\n";
                 TB_Staus.AppendText(sText);
+                label19.Text = "紧急报警：正常";
+                label19.ForeColor = Color.Black;
             }
             else
             {
@@ -652,7 +725,9 @@ namespace _238super_Controller
                     axCooMonitorMain.FCSendCtrlCmd(listViewMain.Items[0].Name, FC_Ctrl_Type.FC_CTRL_PANIC_ALARM, strc);
                     listViewMain.Items[i].SubItems[5].Text = "启动紧急报警";
                     String sText = "主机" + listViewMain.Items[i].Name + "启动紧急报警" + "\r\n";
-                    TB_Staus.AppendText(sText);                    
+                    TB_Staus.AppendText(sText);
+                    label19.Text = "紧急报警：异常";
+                    label19.ForeColor = Color.Red;
                 }
 
                 
@@ -899,6 +974,8 @@ namespace _238super_Controller
         {
 
         }
+
+       
 
         
     }

@@ -71,26 +71,31 @@ namespace _238super_Controller
             this.BT_Save2Other = new System.Windows.Forms.Button();
             this.BT_Save = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BT_EnterDeviceProG = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.BT_ArmMayday = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BT_ClearArmMemory = new System.Windows.Forms.Button();
+            this.TB_SetupPassWord = new System.Windows.Forms.TextBox();
             this.BT_LRR = new System.Windows.Forms.Button();
             this.BT_QueryPanelStatus = new System.Windows.Forms.Button();
             this.BT_GetPanelType = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TB_ProGData = new System.Windows.Forms.TextBox();
             this.TB_ProGAddr = new System.Windows.Forms.TextBox();
-            this.TB_SetupPassWord = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.BT_ExitProG = new System.Windows.Forms.Button();
             this.BT_StartProG = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label_Monitor = new System.Windows.Forms.Label();
+            this.label_Emergency = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.BT_Login = new System.Windows.Forms.Button();
             this.labelLogin = new System.Windows.Forms.Label();
@@ -108,8 +113,11 @@ namespace _238super_Controller
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.RealPlayWnd = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.BT_ExitDeviceProG = new System.Windows.Forms.Button();
             this.StatusCountLabel = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -120,12 +128,8 @@ namespace _238super_Controller
             this.label14 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Label_DeviceCount = new System.Windows.Forms.ToolStripLabel();
-            this.label_Emergency = new System.Windows.Forms.Label();
-            this.label_Monitor = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.axCooMonitorMain = new AxIPModuleLib.AxCooMonitor();
+            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -258,7 +262,7 @@ namespace _238super_Controller
             // 
             // BT_Arm
             // 
-            this.BT_Arm.Location = new System.Drawing.Point(135, 45);
+            this.BT_Arm.Location = new System.Drawing.Point(136, 38);
             this.BT_Arm.Name = "BT_Arm";
             this.BT_Arm.Size = new System.Drawing.Size(75, 23);
             this.BT_Arm.TabIndex = 29;
@@ -268,7 +272,7 @@ namespace _238super_Controller
             // 
             // BT_DisArm
             // 
-            this.BT_DisArm.Location = new System.Drawing.Point(135, 96);
+            this.BT_DisArm.Location = new System.Drawing.Point(136, 89);
             this.BT_DisArm.Name = "BT_DisArm";
             this.BT_DisArm.Size = new System.Drawing.Size(75, 23);
             this.BT_DisArm.TabIndex = 30;
@@ -278,7 +282,7 @@ namespace _238super_Controller
             // 
             // TB_238Password
             // 
-            this.TB_238Password.Location = new System.Drawing.Point(17, 47);
+            this.TB_238Password.Location = new System.Drawing.Point(18, 40);
             this.TB_238Password.Name = "TB_238Password";
             this.TB_238Password.PasswordChar = '*';
             this.TB_238Password.Size = new System.Drawing.Size(100, 21);
@@ -337,24 +341,46 @@ namespace _238super_Controller
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.BT_EnterDeviceProG);
+            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.BT_ArmMayday);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.BT_ClearArmMemory);
             this.groupBox3.Controls.Add(this.BT_Arm);
+            this.groupBox3.Controls.Add(this.TB_SetupPassWord);
             this.groupBox3.Controls.Add(this.BT_DisArm);
             this.groupBox3.Controls.Add(this.TB_238Password);
-            this.groupBox3.Location = new System.Drawing.Point(386, 90);
+            this.groupBox3.Location = new System.Drawing.Point(431, 99);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(478, 174);
+            this.groupBox3.Size = new System.Drawing.Size(424, 174);
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "布撤防";
+            // 
+            // BT_EnterDeviceProG
+            // 
+            this.BT_EnterDeviceProG.Location = new System.Drawing.Point(136, 132);
+            this.BT_EnterDeviceProG.Name = "BT_EnterDeviceProG";
+            this.BT_EnterDeviceProG.Size = new System.Drawing.Size(97, 32);
+            this.BT_EnterDeviceProG.TabIndex = 51;
+            this.BT_EnterDeviceProG.Text = "进入设备编程";
+            this.BT_EnterDeviceProG.UseVisualStyleBackColor = true;
+            this.BT_EnterDeviceProG.Click += new System.EventHandler(this.BT_EnterDeviceProG_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 123);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 12);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "安装员编程:";
             // 
             // BT_ArmMayday
             // 
             this.BT_ArmMayday.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.BT_ArmMayday.ForeColor = System.Drawing.Color.Crimson;
-            this.BT_ArmMayday.Location = new System.Drawing.Point(240, 32);
+            this.BT_ArmMayday.Location = new System.Drawing.Point(241, 25);
             this.BT_ArmMayday.Name = "BT_ArmMayday";
             this.BT_ArmMayday.Size = new System.Drawing.Size(168, 87);
             this.BT_ArmMayday.TabIndex = 1;
@@ -365,7 +391,7 @@ namespace _238super_Controller
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 32);
+            this.label1.Location = new System.Drawing.Point(16, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 38;
@@ -373,13 +399,22 @@ namespace _238super_Controller
             // 
             // BT_ClearArmMemory
             // 
-            this.BT_ClearArmMemory.Location = new System.Drawing.Point(17, 87);
+            this.BT_ClearArmMemory.Location = new System.Drawing.Point(18, 80);
             this.BT_ClearArmMemory.Name = "BT_ClearArmMemory";
             this.BT_ClearArmMemory.Size = new System.Drawing.Size(95, 33);
             this.BT_ClearArmMemory.TabIndex = 0;
             this.BT_ClearArmMemory.Text = "清除报警记忆";
             this.BT_ClearArmMemory.UseVisualStyleBackColor = true;
             this.BT_ClearArmMemory.Click += new System.EventHandler(this.BT_ClearArmMemory_Click);
+            // 
+            // TB_SetupPassWord
+            // 
+            this.TB_SetupPassWord.Location = new System.Drawing.Point(18, 143);
+            this.TB_SetupPassWord.Name = "TB_SetupPassWord";
+            this.TB_SetupPassWord.PasswordChar = '*';
+            this.TB_SetupPassWord.Size = new System.Drawing.Size(63, 21);
+            this.TB_SetupPassWord.TabIndex = 46;
+            this.TB_SetupPassWord.Text = "012345";
             // 
             // BT_LRR
             // 
@@ -417,7 +452,7 @@ namespace _238super_Controller
             this.groupBox5.Controls.Add(this.BT_LRR);
             this.groupBox5.Controls.Add(this.BT_GetPanelType);
             this.groupBox5.Controls.Add(this.BT_QueryPanelStatus);
-            this.groupBox5.Location = new System.Drawing.Point(508, 73);
+            this.groupBox5.Location = new System.Drawing.Point(471, 68);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(189, 200);
             this.groupBox5.TabIndex = 41;
@@ -426,35 +461,24 @@ namespace _238super_Controller
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.label3);
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Controls.Add(this.TB_ProGData);
             this.groupBox6.Controls.Add(this.TB_ProGAddr);
-            this.groupBox6.Controls.Add(this.TB_SetupPassWord);
             this.groupBox6.Controls.Add(this.button3);
             this.groupBox6.Controls.Add(this.BT_ExitProG);
             this.groupBox6.Controls.Add(this.BT_StartProG);
-            this.groupBox6.Location = new System.Drawing.Point(122, 79);
+            this.groupBox6.Location = new System.Drawing.Point(122, 68);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(342, 194);
+            this.groupBox6.Size = new System.Drawing.Size(278, 189);
             this.groupBox6.TabIndex = 42;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "编程部分";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 12);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "安装员编程:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 95);
+            this.label3.Location = new System.Drawing.Point(26, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 12);
             this.label3.TabIndex = 49;
@@ -463,7 +487,7 @@ namespace _238super_Controller
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 63);
+            this.label2.Location = new System.Drawing.Point(25, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 12);
             this.label2.TabIndex = 43;
@@ -471,7 +495,7 @@ namespace _238super_Controller
             // 
             // TB_ProGData
             // 
-            this.TB_ProGData.Location = new System.Drawing.Point(91, 90);
+            this.TB_ProGData.Location = new System.Drawing.Point(93, 60);
             this.TB_ProGData.Name = "TB_ProGData";
             this.TB_ProGData.Size = new System.Drawing.Size(57, 21);
             this.TB_ProGData.TabIndex = 48;
@@ -479,33 +503,24 @@ namespace _238super_Controller
             // 
             // TB_ProGAddr
             // 
-            this.TB_ProGAddr.Location = new System.Drawing.Point(91, 59);
+            this.TB_ProGAddr.Location = new System.Drawing.Point(93, 29);
             this.TB_ProGAddr.Name = "TB_ProGAddr";
             this.TB_ProGAddr.Size = new System.Drawing.Size(57, 21);
             this.TB_ProGAddr.TabIndex = 47;
             this.TB_ProGAddr.Text = "00";
             // 
-            // TB_SetupPassWord
-            // 
-            this.TB_SetupPassWord.Location = new System.Drawing.Point(91, 27);
-            this.TB_SetupPassWord.Name = "TB_SetupPassWord";
-            this.TB_SetupPassWord.PasswordChar = '*';
-            this.TB_SetupPassWord.Size = new System.Drawing.Size(63, 21);
-            this.TB_SetupPassWord.TabIndex = 46;
-            this.TB_SetupPassWord.Text = "012345";
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(26, 129);
+            this.button3.Location = new System.Drawing.Point(171, 29);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 39);
+            this.button3.Size = new System.Drawing.Size(79, 52);
             this.button3.TabIndex = 45;
             this.button3.Text = "主机编程";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // BT_ExitProG
             // 
-            this.BT_ExitProG.Location = new System.Drawing.Point(171, 84);
+            this.BT_ExitProG.Location = new System.Drawing.Point(146, 111);
             this.BT_ExitProG.Name = "BT_ExitProG";
             this.BT_ExitProG.Size = new System.Drawing.Size(104, 50);
             this.BT_ExitProG.TabIndex = 44;
@@ -515,7 +530,7 @@ namespace _238super_Controller
             // 
             // BT_StartProG
             // 
-            this.BT_StartProG.Location = new System.Drawing.Point(171, 25);
+            this.BT_StartProG.Location = new System.Drawing.Point(27, 111);
             this.BT_StartProG.Name = "BT_StartProG";
             this.BT_StartProG.Size = new System.Drawing.Size(104, 50);
             this.BT_StartProG.TabIndex = 43;
@@ -546,8 +561,18 @@ namespace _238super_Controller
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(922, 333);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "登录界面";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(756, 162);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(173, 12);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "两个设备都开启才可正常工作！";
             // 
             // groupBox7
             // 
@@ -561,6 +586,34 @@ namespace _238super_Controller
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "工作状态";
             this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 94);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(125, 12);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "设备运行状态：未工作";
+            // 
+            // label_Monitor
+            // 
+            this.label_Monitor.AutoSize = true;
+            this.label_Monitor.Location = new System.Drawing.Point(6, 60);
+            this.label_Monitor.Name = "label_Monitor";
+            this.label_Monitor.Size = new System.Drawing.Size(77, 12);
+            this.label_Monitor.TabIndex = 1;
+            this.label_Monitor.Text = "监控：未登录";
+            // 
+            // label_Emergency
+            // 
+            this.label_Emergency.AutoSize = true;
+            this.label_Emergency.Location = new System.Drawing.Point(6, 26);
+            this.label_Emergency.Name = "label_Emergency";
+            this.label_Emergency.Size = new System.Drawing.Size(89, 12);
+            this.label_Emergency.TabIndex = 0;
+            this.label_Emergency.Text = "报警器：未开启";
+            this.label_Emergency.Click += new System.EventHandler(this.label_Emergency_Click);
             // 
             // groupBox8
             // 
@@ -718,6 +771,9 @@ namespace _238super_Controller
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.RealPlayWnd);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -725,21 +781,41 @@ namespace _238super_Controller
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(922, 333);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "监控界面";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.Location = new System.Drawing.Point(581, 67);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(96, 16);
+            this.label18.TabIndex = 39;
+            this.label18.Text = "防区3：正常";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label17.Location = new System.Drawing.Point(428, 67);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(104, 16);
+            this.label17.TabIndex = 38;
+            this.label17.Text = "防区2 ：正常";
             // 
             // RealPlayWnd
             // 
             this.RealPlayWnd.BackColor = System.Drawing.SystemColors.WindowText;
-            this.RealPlayWnd.Location = new System.Drawing.Point(45, 31);
+            this.RealPlayWnd.Location = new System.Drawing.Point(6, 18);
             this.RealPlayWnd.Name = "RealPlayWnd";
-            this.RealPlayWnd.Size = new System.Drawing.Size(286, 233);
+            this.RealPlayWnd.Size = new System.Drawing.Size(374, 296);
             this.RealPlayWnd.TabIndex = 5;
             this.RealPlayWnd.TabStop = false;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.BT_ExitDeviceProG);
             this.tabPage3.Controls.Add(this.groupBox6);
             this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -747,8 +823,18 @@ namespace _238super_Controller
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(922, 333);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "设备编程界面";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // BT_ExitDeviceProG
+            // 
+            this.BT_ExitDeviceProG.Location = new System.Drawing.Point(814, 265);
+            this.BT_ExitDeviceProG.Name = "BT_ExitDeviceProG";
+            this.BT_ExitDeviceProG.Size = new System.Drawing.Size(87, 50);
+            this.BT_ExitDeviceProG.TabIndex = 43;
+            this.BT_ExitDeviceProG.Text = "退出设备编程";
+            this.BT_ExitDeviceProG.UseVisualStyleBackColor = true;
+            this.BT_ExitDeviceProG.Click += new System.EventHandler(this.BT_ExitDeviceProG_Click);
             // 
             // StatusCountLabel
             // 
@@ -783,7 +869,7 @@ namespace _238super_Controller
             this.EnergencyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(946, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(942, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -837,7 +923,7 @@ namespace _238super_Controller
             this.Label_DeviceCount});
             this.toolStrip1.Location = new System.Drawing.Point(0, 560);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(946, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(942, 25);
             this.toolStrip1.TabIndex = 47;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -846,51 +932,6 @@ namespace _238super_Controller
             this.Label_DeviceCount.Name = "Label_DeviceCount";
             this.Label_DeviceCount.Size = new System.Drawing.Size(74, 22);
             this.Label_DeviceCount.Text = "连接数目 : 0";
-            // 
-            // label_Emergency
-            // 
-            this.label_Emergency.AutoSize = true;
-            this.label_Emergency.Location = new System.Drawing.Point(6, 26);
-            this.label_Emergency.Name = "label_Emergency";
-            this.label_Emergency.Size = new System.Drawing.Size(89, 12);
-            this.label_Emergency.TabIndex = 0;
-            this.label_Emergency.Text = "报警器：未开启";
-            this.label_Emergency.Click += new System.EventHandler(this.label_Emergency_Click);
-            // 
-            // label_Monitor
-            // 
-            this.label_Monitor.AutoSize = true;
-            this.label_Monitor.Location = new System.Drawing.Point(6, 60);
-            this.label_Monitor.Name = "label_Monitor";
-            this.label_Monitor.Size = new System.Drawing.Size(77, 12);
-            this.label_Monitor.TabIndex = 1;
-            this.label_Monitor.Text = "监控：未登录";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 94);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(125, 12);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "设备运行状态：未工作";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(756, 162);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(173, 12);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "两个设备都开启才可正常工作！";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(250, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 48;
             // 
             // axCooMonitorMain
             // 
@@ -904,15 +945,25 @@ namespace _238super_Controller
             this.axCooMonitorMain.DeviceConnected += new AxIPModuleLib._ICooMonitorEvents_DeviceConnectedEventHandler(this.axCooMonitorMain_DeviceConnected);
             this.axCooMonitorMain.DeviceDisConnected += new AxIPModuleLib._ICooMonitorEvents_DeviceDisConnectedEventHandler(this.axCooMonitorMain_DeviceDisConnected);
             this.axCooMonitorMain.PanelStatus += new AxIPModuleLib._ICooMonitorEvents_PanelStatusEventHandler(this.axCooMonitorMain_PanelStatus);
-            this.axCooMonitorMain.PanelStatusEx += new AxIPModuleLib._ICooMonitorEvents_PanelStatusExEventHandler(this.axCooMonitorMain_PanelStatusEx);
             this.axCooMonitorMain.AppVerQueryResult += new AxIPModuleLib._ICooMonitorEvents_AppVerQueryResultEventHandler(this.axCooMonitorMain_AppVerQueryResult);
+            this.axCooMonitorMain.PanelStatusEx += new AxIPModuleLib._ICooMonitorEvents_PanelStatusExEventHandler(this.axCooMonitorMain_PanelStatusEx);
             this.axCooMonitorMain.LRRQueryResult += new AxIPModuleLib._ICooMonitorEvents_LRRQueryResultEventHandler(this.axCooMonitor1_LRRQueryAddr);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(710, 67);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(120, 16);
+            this.label19.TabIndex = 40;
+            this.label19.Text = "紧急报警：正常";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 585);
+            this.ClientSize = new System.Drawing.Size(942, 585);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.btnHelp);
@@ -941,9 +992,9 @@ namespace _238super_Controller
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RealPlayWnd)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -1034,7 +1085,11 @@ namespace _238super_Controller
         private System.Windows.Forms.Label label_Emergency;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button BT_EnterDeviceProG;
+        private System.Windows.Forms.Button BT_ExitDeviceProG;
+        private System.Windows.Forms.Label label19;
     }
 }
 
