@@ -54,7 +54,7 @@ namespace _238super_Controller
             TB_ProGAddr.Enabled = false;
             TB_ProGData.Enabled = false;
             BT_ExitProG.Enabled = false;
-            button3.Enabled = false;
+            
         }
 
         private void WorkStaus()
@@ -90,17 +90,9 @@ namespace _238super_Controller
 
         private void BT_Start_Click(object sender, EventArgs e) //开始连接
         {
-            //axCooMonitorMain.Port = int.Parse(textBoxPort.Text);
-            axCooMonitorMain.Port = 7838;
-            try
-            {
-                axCooMonitorMain.Startup();
-            }
-            catch
-            {
-                MessageBox.Show("打开失败");
-            }
-
+            axCooMonitorMain.Port = int.Parse(TB_238Port.Text);                    
+            axCooMonitorMain.Startup();
+            
             BT_Start.Enabled = false;
             listViewMain.Items.Clear();
             
@@ -655,7 +647,7 @@ namespace _238super_Controller
                 TB_ProGAddr.Enabled = true;
                 TB_ProGData.Enabled = true;                
                 BT_ExitProG.Enabled = true;
-                button3.Enabled = true;
+                
                 BT_StartProG.Enabled = false;
                 listViewMain.Items[i].SubItems[5].Text = "进入编程";
                 String sText = "主机" + listViewMain.Items[i].Name + "进入编程：" + strc + "\r\n";
@@ -680,7 +672,7 @@ namespace _238super_Controller
                 TB_ProGAddr.Enabled = false;
                 TB_ProGData.Enabled = false;
                 BT_ExitProG.Enabled = false;
-                button3.Enabled = false;
+                
                 BT_StartProG.Enabled = true;
                 listViewMain.Items[i].SubItems[5].Text = "退出编程";
                 String sText = "主机" + listViewMain.Items[i].Name + "退出编程：" + strc + "\r\n";
@@ -975,8 +967,9 @@ namespace _238super_Controller
 
         }
 
-       
+        private void button3_Click(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }

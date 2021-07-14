@@ -86,7 +86,6 @@ namespace _238super_Controller
             this.label2 = new System.Windows.Forms.Label();
             this.TB_ProGData = new System.Windows.Forms.TextBox();
             this.TB_ProGAddr = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.BT_ExitProG = new System.Windows.Forms.Button();
             this.BT_StartProG = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -113,6 +112,7 @@ namespace _238super_Controller
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.RealPlayWnd = new System.Windows.Forms.PictureBox();
@@ -129,7 +129,6 @@ namespace _238super_Controller
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Label_DeviceCount = new System.Windows.Forms.ToolStripLabel();
             this.axCooMonitorMain = new AxIPModuleLib.AxCooMonitor();
-            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -465,7 +464,6 @@ namespace _238super_Controller
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Controls.Add(this.TB_ProGData);
             this.groupBox6.Controls.Add(this.TB_ProGAddr);
-            this.groupBox6.Controls.Add(this.button3);
             this.groupBox6.Controls.Add(this.BT_ExitProG);
             this.groupBox6.Controls.Add(this.BT_StartProG);
             this.groupBox6.Location = new System.Drawing.Point(122, 68);
@@ -478,7 +476,7 @@ namespace _238super_Controller
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 65);
+            this.label3.Location = new System.Drawing.Point(73, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 12);
             this.label3.TabIndex = 49;
@@ -487,7 +485,7 @@ namespace _238super_Controller
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 33);
+            this.label2.Location = new System.Drawing.Point(72, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 12);
             this.label2.TabIndex = 43;
@@ -495,7 +493,7 @@ namespace _238super_Controller
             // 
             // TB_ProGData
             // 
-            this.TB_ProGData.Location = new System.Drawing.Point(93, 60);
+            this.TB_ProGData.Location = new System.Drawing.Point(140, 71);
             this.TB_ProGData.Name = "TB_ProGData";
             this.TB_ProGData.Size = new System.Drawing.Size(57, 21);
             this.TB_ProGData.TabIndex = 48;
@@ -503,20 +501,11 @@ namespace _238super_Controller
             // 
             // TB_ProGAddr
             // 
-            this.TB_ProGAddr.Location = new System.Drawing.Point(93, 29);
+            this.TB_ProGAddr.Location = new System.Drawing.Point(140, 40);
             this.TB_ProGAddr.Name = "TB_ProGAddr";
             this.TB_ProGAddr.Size = new System.Drawing.Size(57, 21);
             this.TB_ProGAddr.TabIndex = 47;
             this.TB_ProGAddr.Text = "00";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(171, 29);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 52);
-            this.button3.TabIndex = 45;
-            this.button3.Text = "主机编程";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // BT_ExitProG
             // 
@@ -534,7 +523,7 @@ namespace _238super_Controller
             this.BT_StartProG.Name = "BT_StartProG";
             this.BT_StartProG.Size = new System.Drawing.Size(104, 50);
             this.BT_StartProG.TabIndex = 43;
-            this.BT_StartProG.Text = "开始编程";
+            this.BT_StartProG.Text = "指令输入";
             this.BT_StartProG.UseVisualStyleBackColor = true;
             this.BT_StartProG.Click += new System.EventHandler(this.BT_StartProG_Click);
             // 
@@ -784,6 +773,16 @@ namespace _238super_Controller
             this.tabPage2.Text = "监控界面";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(710, 67);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(120, 16);
+            this.label19.TabIndex = 40;
+            this.label19.Text = "紧急报警：正常";
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -949,16 +948,6 @@ namespace _238super_Controller
             this.axCooMonitorMain.PanelStatusEx += new AxIPModuleLib._ICooMonitorEvents_PanelStatusExEventHandler(this.axCooMonitorMain_PanelStatusEx);
             this.axCooMonitorMain.LRRQueryResult += new AxIPModuleLib._ICooMonitorEvents_LRRQueryResultEventHandler(this.axCooMonitor1_LRRQueryAddr);
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(710, 67);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(120, 16);
-            this.label19.TabIndex = 40;
-            this.label19.Text = "紧急报警：正常";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1044,7 +1033,6 @@ namespace _238super_Controller
         private System.Windows.Forms.TextBox TB_ProGData;
         private System.Windows.Forms.TextBox TB_ProGAddr;
         private System.Windows.Forms.TextBox TB_SetupPassWord;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button BT_ExitProG;
         private System.Windows.Forms.Button BT_StartProG;
         private System.Windows.Forms.Button BT_ArmMayday;
